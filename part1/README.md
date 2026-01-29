@@ -1,4 +1,4 @@
-# HBnB Part 1 - All Diagrams
+# HBnB Part 1 - Compact Technical Documentation
 
 ```mermaid
 %% High-Level Package Diagram
@@ -9,7 +9,7 @@ class PersistenceLayer { Repositories Database }
 PresentationLayer --> BusinessLogicLayer : uses Facade
 BusinessLogicLayer --> PersistenceLayer : data access
 
-%% Detailed Class Diagram - Business Logic Layer
+%% Detailed Class Diagram
 class BaseModel { +UUID id +datetime created_at +datetime updated_at +save() +update() }
 class User { +string email +string password +string first_name +string last_name +create_place() +add_review() }
 class Place { +string name +string description +float price +float latitude +float longitude +add_amenity() }
