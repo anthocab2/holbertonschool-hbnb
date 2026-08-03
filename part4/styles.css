@@ -1,0 +1,107 @@
+body {
+
+font-family: Arial, sans-serif;
+
+margin:0;
+
+}
+
+
+header {
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:20px;
+
+background:#f5f5f5;
+
+}
+
+
+.logo {
+
+width:120px;
+
+}
+
+
+
+main {
+
+padding:20px;
+
+}
+
+
+
+.place-card,
+.review-card {
+
+
+margin:20px;
+
+padding:10px;
+
+border:1px solid #ddd;
+
+border-radius:10px;
+
+
+}
+
+
+
+button,
+.login-button,
+.details-button {
+
+
+padding:10px;
+
+cursor:pointer;
+
+}
+
+
+
+footer {
+
+
+text-align:center;
+
+padding:20px;
+
+background:#eee;
+
+
+}
+
+
+
+form {
+
+
+display:flex;
+
+flex-direction:column;
+
+gap:10px;
+
+max-width:400px;
+
+
+}
+
+
+
+input,
+textarea {
+
+
+padding:10px;
+
+}
