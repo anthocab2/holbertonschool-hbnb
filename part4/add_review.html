@@ -1,101 +1,62 @@
 <!DOCTYPE html>
-
-
 <html lang="en">
 
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Review</title>
 
-<meta charset="UTF-8">
-
-<title>Add Review</title>
-
-<link rel="stylesheet" href="styles.css">
-
-
+    <link rel="stylesheet" href="styles.css">
 </head>
-
-
 
 <body>
 
+    <header>
+        <img src="images/logo.png" alt="HBnB Logo" class="logo">
 
-<header>
+        <nav>
+            <a href="index.html">Home</a>
+        </nav>
+    </header>
 
+    <main>
 
-<img src="images/logo.png" class="logo">
+        <section class="add-review">
 
+            <h1>Add Review</h1>
 
-</header>
+            <form id="review-form">
 
+                <label for="review">
+                    Review
+                </label>
 
+                <textarea
+                    id="review"
+                    name="review"
+                    required
+                    rows="5"
+                    placeholder="Write your review here">
+                </textarea>
 
+                <button type="submit">
+                    Submit Review
+                </button>
 
-<main>
+            </form>
 
+            <p id="message"></p>
 
-<form id="review-form" class="add-review">
+        </section>
 
+    </main>
 
-<h1>
-Add Review
-</h1>
+    <footer>
+        <p>All rights reserved.</p>
+    </footer>
 
-
-
-<textarea
-id="comment"
-placeholder="Your review"
-required>
-</textarea>
-
-
-
-<input
-type="number"
-id="rating"
-min="1"
-max="5"
-placeholder="Rating"
-required>
-
-
-
-<button>
-Submit
-</button>
-
-
-</form>
-
-
-
-</main>
-
-
-
-
-<footer>
-
-<p>
-© 2026 HBnB. All rights reserved.
-</p>
-
-
-</footer>
-
-
-
-
-<script src="scripts/api.js"></script>
-
-<script src="scripts/auth.js"></script>
-
-<script src="scripts/review.js"></script>
-
-
+    <script src="scripts/review.js"></script>
 
 </body>
-
 
 </html>
