@@ -1,5 +1,6 @@
-from app.extensions import db, bcrypt
 import uuid
+
+from app.extensions import db, bcrypt
 
 
 class User(db.Model):
@@ -48,6 +49,20 @@ class User(db.Model):
     )
 
 
+    places = db.relationship(
+        "Place",
+        backref="owner",
+        lazy=True
+    )
+
+
+    reviews = db.relationship(
+        "Review",
+        backref="user",
+        lazy=True
+    )
+
+
     def __init__(
         self,
         first_name,
@@ -61,18 +76,16 @@ class User(db.Model):
         self.last_name = last_name
         self.email = email
 
-        self.password = bcrypt.generate_password_hash(
-            password
-        ).decode("utf-8")
+        self.password = (
+            bcrypt
+            .generate_password_hash(password)
+            .decode("utf-8")
+        )
 
         self.is_admin = is_admin
 
 
     def check_password(self, password):
-        """
-        Check if password matches hash.
-        """
-
         return bcrypt.check_password_hash(
             self.password,
             password
@@ -80,9 +93,6 @@ class User(db.Model):
 
 
     def to_dict(self):
-        """
-        Return user without password.
-        """
 
         return {
             "id": self.id,
