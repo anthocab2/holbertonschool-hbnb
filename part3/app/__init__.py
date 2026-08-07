@@ -6,18 +6,13 @@ from config import Config
 
 def create_app(config_class=Config):
     """
-    Application factory function.
-
-    Creates and configures the Flask application.
+    Application factory.
     """
 
     app = Flask(__name__)
 
-    # Load configuration
     app.config.from_object(config_class)
 
-    # Enable CORS
     CORS(app)
-
 
     return app
